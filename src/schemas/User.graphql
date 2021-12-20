@@ -1,0 +1,38 @@
+type User {
+  id: ID
+  name: String!
+  status: String
+  tasksQtd: Int
+}
+
+input UserInput {
+  id: ID
+  name: String!
+  status: String
+}
+
+input UserSearchInput {
+  id: ID
+  name: String
+  status: String
+}
+
+type UserResponse {
+  message: String
+  status: String
+  user: User
+}
+
+# scalability, always return object
+type UserQueryResponse {
+  users: [User]
+  msg: String
+}
+
+type Query {
+  listUsers(search: UserSearchInput): UserQueryResponse
+}
+
+type Mutation {
+  saveUser(input: UserInput): UserResponse
+}

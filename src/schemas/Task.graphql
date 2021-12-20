@@ -1,0 +1,48 @@
+enum Status {
+  TO_DO
+  IN_PROGRESS
+  DONE
+  ARCHIVED
+}
+
+type Task {
+  id: Int
+  user: User
+  title: String
+  descr: String
+  status: Status
+}
+
+input TaskInput {
+  id: Int
+  user: String
+  title: String
+  descr: String
+  status: Status
+}
+
+input TaskSearch {
+  user: String
+  title: String
+  status: Status
+}
+
+type TaskResponse {
+  message: String
+  status: String
+  task: Task
+}
+
+# scalability, always return object
+type TaskQueryResponse {
+  tasks: [Task]
+  msg: String
+}
+
+type Query {
+  listTasks(search: TaskSearch): TaskQueryResponse
+}
+
+type Mutation {
+  saveTask(input: TaskInput): TaskResponse
+}

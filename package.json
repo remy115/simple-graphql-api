@@ -1,0 +1,30 @@
+{
+  "name": "graphql",
+  "version": "0.0.1",
+  "description": "Simple GraphQL Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest src/__tests__/**/*.test.js",
+    "test11": "jest src/__tests__/user/user.test.js"
+  },
+  "keywords": [
+    "Test",
+    "GraphQL",
+    "Backend"
+  ],
+  "author": "Remy Barros",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.5.3",
+    "@graphql-tools/merge": "^8.2.1",
+    "apollo-datasource": "^3.3.0",
+    "apollo-server": "^3.5.0",
+    "apollo-server-express": "^3.5.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "graphql": "^15.8.0",
+    "jest": "^27.4.5",
+    "mongoose": "^6.1.2"
+  }
+}
